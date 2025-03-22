@@ -6,7 +6,8 @@
         <title>Ucieczka pokoj</title>
     </head>
     <body>
-        <h1>Wpisz kod</h1>
+        <center>
+        <h1>Wpisz parametry</h1>
         <br>
         <p>Napięcie</p>
         <input type="text" name="text" id="napiecie">
@@ -22,7 +23,7 @@
         <p id="p1"></p>
         <video id="v1" width="0" controls="controls"></video>
         <br>
-        
+        </center>
 
     </body>
     <script>
@@ -64,67 +65,55 @@
             {
                 document.getElementById("p1").innerHTML = "dobsz wszystko";
                 video.src="wideo.mp4";
-                video.width=300;
-                video.load();
-                video.play();
+                
             }
             else if(spr==110)
             {
                 document.getElementById("p1").innerHTML = "tylko napiecie i prad dobsz";
                 video.src="wideo1.mp4";
-                video.width=300;
-                video.load();
-                video.play();
+                
                 
             }
             else if(spr==101)
             {
                 document.getElementById("p1").innerHTML = "tylko napiecie i moc dobsz";
                 video.src="wideo2.mp4";
-                video.width=300;
-                video.load();
-                video.play();
+                
             }
             else if(spr==11)
             {
                 document.getElementById("p1").innerHTML = "tylko prad i moc dobsz";
                 video.src="wideo3.mp4";
-                video.width=300;
-                video.load();
-                video.play();
+                
             }
             else if(spr==100)
             {
                 document.getElementById("p1").innerHTML = "tylko napiecie dobsz";
                 video.src="wideo3.mp4";
-                video.width=300;
-                video.load();
-                video.play();
+                
             }
             else if(spr==10)
             {
                 document.getElementById("p1").innerHTML = "tylko prad dobsz";
                 video.src="wideo3.mp4";
-                video.width=300;
-                video.load();
-                video.play();
+                
             }
             else if(spr==1)
             {
                 document.getElementById("p1").innerHTML = "tylko moc dobsz";
                 video.src="wideo3.mp4";
-                video.width=300;
-                video.load();
-                video.play();
+                
             }
             else
             {
                 document.getElementById("p1").innerHTML = "wszystko zle";
                 video.src="wideo4.mp4";
-                video.width=300;
-                video.load();
-                video.play();
+                
+                
             }
+            video.width=300;
+            video.load();
+            video.play();
         }
 
 
