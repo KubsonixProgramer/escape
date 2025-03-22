@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ucieczka pokoj</title>
+    </head>
+    <body>
+        <h1>Wpisz kod</h1>
+        <input type="text" name="text" id="kod">
+        <button onclick="check()">sprawdź</button>
+        <br>
+        <p id="p1"></p>
+        <video id="v1" width="0" controls="controls"></video>
+        <br>
+
+    </body>
+    <script>
+        var correct_code = "1234";
+        var correct_code1 = "12345";
+        var correct_code2 = "123456";
+        var correct_code3 = "1234567";
+        let video =document.getElementById("v1");
+        function check()
+        {
+            if(document.getElementById('kod').value==correct_code)
+            {
+                document.getElementById("p1").innerHTML = "dobsz";
+                video.src="wideo.mp4";
+                video.width=400;
+                video.load();
+                video.play();
+            }
+            else if(document.getElementById('kod').value==correct_code1)
+            {
+                document.getElementById("p1").innerHTML = "dobsz";
+                video.src="wideo1.mp4";
+                video.width=400;
+                video.load();
+                video.play();
+            }
+            else if(document.getElementById('kod').value==correct_code2)
+            {
+                document.getElementById("p1").innerHTML = "dobsz";
+                video.src="wideo2.mp4";
+                video.width=400;
+                video.load();
+                video.play();
+            }
+            else if(document.getElementById('kod').value==correct_code3)
+            {
+                document.getElementById("p1").innerHTML = "dobsz";
+                video.src="wideo3.mp4";
+                video.width=400;
+                video.load();
+                video.play();
+            }
+            else
+            {
+                document.getElementById("p1").innerHTML = "źle";
+                video.src="";
+                video.width=0;
+            }
+        }
+    </script>
+</html>
+
