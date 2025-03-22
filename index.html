@@ -7,7 +7,16 @@
     </head>
     <body>
         <h1>Wpisz kod</h1>
-        <input type="text" name="text" id="kod">
+        <br>
+        <p>Napięcie</p>
+        <input type="text" name="text" id="napiecie">
+        <br>
+        <p>Prąd</p>
+        <input type="text" name="text" id="prad">
+        <br>
+        <p>Moc</p>
+        <input type="text" name="text" id="moc">
+        <br>
         <button onclick="check()">sprawdź</button>
         <br>
         <p id="p1"></p>
@@ -16,40 +25,72 @@
 
     </body>
     <script>
-        var correct_code = "1234";
-        var correct_code1 = "12345";
-        var correct_code2 = "123456";
+        var correct_code = "20";
+        var correct_code1 = "20";
+        var correct_code2 = "400";
         var correct_code3 = "1234567";
         let video =document.getElementById("v1");
         function check()
         {
-            if(document.getElementById('kod').value==correct_code)
+            if(document.getElementById('napiecie').value==correct_code && document.getElementById('prad').value==correct_code1 && document.getElementById('moc').value==correct_code2)
             {
-                document.getElementById("p1").innerHTML = "dobsz";
+                document.getElementById("p1").innerHTML = "dobsz wszystko";
                 video.src="wideo.mp4";
                 video.width=300;
                 video.load();
                 video.play();
             }
-            else if(document.getElementById('kod').value==correct_code1)
+            else if(document.getElementById('napiecie').value==correct_code && document.getElementById('prad').value!=correct_code1)
             {
-                document.getElementById("p1").innerHTML = "dobsz";
-                video.src="wideo1.mp4";
+                if(document.getElementById('moc').value!=correct_code2)
+                {
+                    document.getElementById("p1").innerHTML = "tylko napiecie dobsz";
+                    video.src="wideo1.mp4";
+                    video.width=300;
+                    video.load();
+                    video.play();
+                }
+                else
+                {
+                    document.getElementById("p1").innerHTML = "tylko napiecie i moc dobsz";
+                    video.src="wideo1.mp4";
+                    video.width=300;
+                    video.load();
+                    video.play();
+                }
+                
+            }
+            else if(document.getElementById('prad').value==correct_code1 && document.getElementById('napiecie').value!=correct_code)
+            {
+                if(document.getElementById('moc').value!=correct_code2)
+                {
+                    document.getElementById("p1").innerHTML = "tylko prad dobsz";
+                    video.src="wideo2.mp4";
+                    video.width=300;
+                    video.load();
+                    video.play();
+                }
+                else
+                {
+                    document.getElementById("p1").innerHTML = "tylko prad i moc dobsz";
+                    video.src="wideo2.mp4";
+                    video.width=300;
+                    video.load();
+                    video.play();
+                }
+                
+            }
+            else if(document.getElementById('napiecie').value==correct_code && document.getElementById('prad').value==correct_code1)
+            {
+                document.getElementById("p1").innerHTML = "tylko prad i napiecie dobsz";
+                video.src="wideo3.mp4";
                 video.width=300;
                 video.load();
                 video.play();
             }
-            else if(document.getElementById('kod').value==correct_code2)
+            else if(document.getElementById('moc').value==correct_code2)
             {
-                document.getElementById("p1").innerHTML = "dobsz";
-                video.src="wideo2.mp4";
-                video.width=300;
-                video.load();
-                video.play();
-            }
-            else if(document.getElementById('kod').value==correct_code3)
-            {
-                document.getElementById("p1").innerHTML = "dobsz";
+                document.getElementById("p1").innerHTML = "tylko prad dobsz";
                 video.src="wideo3.mp4";
                 video.width=300;
                 video.load();
@@ -57,7 +98,7 @@
             }
             else
             {
-                document.getElementById("p1").innerHTML = "źle";
+                document.getElementById("p1").innerHTML = "wszystko zle";
                 video.src="";
                 video.width=0;
             }
